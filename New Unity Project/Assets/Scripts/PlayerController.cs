@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     private Vector3 playerVelocity;
     public bool groundedPlayer;
+    public float maxJumps = 2;
+    public float jumps;
     public float playerSpeed = 2.0f;
     public float jumpHeight = 1.0f;
     public float gravityValue = -9.81f;
@@ -39,11 +41,21 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.forward = move;
         }
 
-        if (controller.isGrounded)
+        if (groundedPlayer == true)
         {
+            jumps = 0;
 
             if (Input.GetButtonDown("Jump"))
             {
+                jumps = jumps + 1;
+                playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            }
+        }
+        else
+        {
+            if (Input.GetButtonDown("Jump") && jumps < maxJumps)
+            {
+                jumps = jumps + 1;
                 playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             }
         }
