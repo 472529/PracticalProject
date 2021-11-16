@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)
@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.forward = move;
         }
 
+        //playerVelocity = (transform.forward * Input.GetAxis("Vertical") + (transform.right * Input.GetAxis("Horizontal")));
+        //playerVelocity = playerVelocity.normalized * playerSpeed;
         if (groundedPlayer == true)
         {
             jumps = 0;
