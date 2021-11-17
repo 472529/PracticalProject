@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    /*public Transform target;
+    public Transform target;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
     Vector3 velocity = Vector3.zero;
@@ -19,30 +19,34 @@ public class CameraController : MonoBehaviour
 
     public bool CameraDisable = false;
 
-    public Vector3 offset;
-    public Transform target;
+    
     public bool UseOffsetValues;
     public float rotateSpeed;
-    public Transform pivot;*/
+    public Transform pivot;
+
 
     void Start()
     {
-        /*Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
-        //this.xFormCam = this.transform;
-        //this.xFormParent = this.transform.parent;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        this.xFormCam = this.transform;
+        this.xFormParent = this.transform.parent;
+
         if (!UseOffsetValues)
         {
             offset = target.position - transform.position;
         }
 
         pivot.transform.position = target.transform.position;
-        pivot.transform.parent = target.transform; */
+        pivot.transform.parent = target.transform;
+
+        
     }
     void LateUpdate()
     {
+        
 
-        /*
+        
         float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
         target.Rotate(0, horizontal, 0);
 
@@ -55,8 +59,8 @@ public class CameraController : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
         transform.position = target.position - (rotation * offset);
 
-        transform.LookAt(target); */
-        /* if (Input.GetKeyDown(KeyCode.LeftShift))
+        //transform.LookAt(target);
+         if (Input.GetKeyDown(KeyCode.LeftShift))
          {
              CameraDisable = !CameraDisable;
          }
@@ -91,11 +95,11 @@ public class CameraController : MonoBehaviour
          if(this.xFormCam.localPosition.z != this.camDis * -1f)
          {
              this.xFormCam.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this.xFormCam.localPosition.z, this.camDis * -1f, Time.deltaTime * scrollDamp));
-         }*/
+         }
 
-        //Vector3 desiredPos = target.position + offset;
-        //Vector3 smoothPos = Vector3.SmoothDamp(transform.position, desiredPos, ref velocity, smoothSpeed);
-        //transform.position = target.TransformPoint(smoothPos);
-        //transform.rotation = target.rotation;
+        Vector3 desiredPos = target.position + offset;
+        Vector3 smoothPos = Vector3.SmoothDamp(transform.position, desiredPos, ref velocity, smoothSpeed);
+        transform.position = target.TransformPoint(smoothPos);
+        transform.rotation = target.rotation;
     }
 }
