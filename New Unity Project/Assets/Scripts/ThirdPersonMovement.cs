@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public Animator animator;
+    //public Animator animator;
     Vector3 playerVelocity;
     
     public Transform cam;
@@ -23,7 +23,7 @@ public class ThirdPersonMovement : MonoBehaviour
      void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
     }
     void LateUpdate()
     {
@@ -50,10 +50,10 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey("w"))
+        /*if (Input.GetKey("w"))
         {
             animator.SetBool("isRunning", true);
-        }
+        }*/
 
         if (groundedPlayer && playerVelocity.y < 0)
         {
