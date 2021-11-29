@@ -61,7 +61,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (groundedPlayer == true)
         {
             jumps = 0;
-			animator.SetBool("IsJumping", false);
+			
 			if (Input.GetButtonDown("Jump"))
             {				
                 jumps = jumps + 1;
@@ -77,11 +77,11 @@ public class ThirdPersonMovement : MonoBehaviour
             }
         }
 
-		if (playerVelocity != Vector3.zero.normalized && Input.GetKey(KeyCode.W))
+		if (playerVelocity.normalized != Vector3.zero && Input.GetKey(KeyCode.W))
 		{
-			animator.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+			animator.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
 		}
-		else if (playerVelocity == Vector3.zero.normalized)
+		else if (playerVelocity.normalized == Vector3.zero)
 		{
 			animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
 
