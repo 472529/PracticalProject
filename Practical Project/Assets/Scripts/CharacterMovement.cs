@@ -39,6 +39,7 @@ public class CharacterMovement : MonoBehaviour
 	private void LateUpdate()
 	{
 		Move();
+		Debug.DrawRay(moveDirection, moveDirection);
 	}
 
 	private void Move()
@@ -50,6 +51,11 @@ public class CharacterMovement : MonoBehaviour
 
 		Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+		float moveZ = Input.GetAxis("Vertical");
+
+		moveDirection = new Vector3(0, 0, moveZ);
+		moveDirection = transform.TransformDirection(moveDirection);
+
 		if (direction.magnitude >= 0.1f)
 		{
 
@@ -58,7 +64,7 @@ public class CharacterMovement : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
 			Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-			controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+			controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
 
 
 
@@ -69,10 +75,7 @@ public class CharacterMovement : MonoBehaviour
 			velocity.y = -1f;
 		}
 
-		float moveZ = Input.GetAxis("Vertical");
-
-		moveDirection = new Vector3(0, 0, moveZ);
-		moveDirection = transform.TransformDirection(moveDirection);
+		
 		if (isGrounded)
 		{
 			jumps = 0;
