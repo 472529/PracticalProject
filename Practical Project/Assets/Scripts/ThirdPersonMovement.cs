@@ -25,7 +25,12 @@ public class ThirdPersonMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         animator = GetComponentInChildren<Animator>();
     }
-    void LateUpdate()
+
+	private void Update()
+	{
+		Shader.SetGlobalVector("_PositionMoving", transform.position);
+	}
+	void LateUpdate()
     {
         Movement();
     }

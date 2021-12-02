@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
 	private void LateUpdate()
 	{
 		Move();
-		Debug.DrawRay(moveDirection, moveDirection);
+		
 	}
 
 	private void Move()
