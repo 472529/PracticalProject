@@ -5,4 +5,6 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 	public float collectable;
+	public float playerHealth;
+
 }
