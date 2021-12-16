@@ -34,7 +34,7 @@ public class AIController : MonoBehaviour
 
 	GameObject player;
 	PlayerManager playerManager;
-	Animator anim;
+	public Animator anim;
 
 	void Start()
 	{
@@ -76,9 +76,10 @@ public class AIController : MonoBehaviour
 		//  The enemy is chasing the player
 		m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
 		playerLastPosition = Vector3.zero;          //  Reset the player near position
-
+		
 		if (!m_CaughtPlayer)
 		{
+			anim.SetBool("IsChasing", true);
 			Move(speedRun);
 			navMeshAgent.SetDestination(m_PlayerPosition);          //  set the destination of the enemy to the player location
 		}
@@ -89,6 +90,7 @@ public class AIController : MonoBehaviour
 				//  Check if the enemy is not near to the player, returns to patrol after the wait time delay
 				m_IsPatrol = true;
 				m_PlayerNear = false;
+				anim.SetBool("IsPatrol", true);
 				Move(speedWalk);
 				m_TimeToRotate = timeToRotate;
 				m_WaitTime = startWaitTime;
@@ -111,6 +113,7 @@ public class AIController : MonoBehaviour
 			//  Check if the enemy detect near the player, so the enemy will move to that position
 			if (m_TimeToRotate <= 0)
 			{
+				anim.SetBool("IsPatrol", true);
 				Move(speedWalk);
 				LookingPlayer(playerLastPosition);
 			}
@@ -132,21 +135,18 @@ public class AIController : MonoBehaviour
 				if (m_WaitTime <= 0)
 				{
 					NextPoint();
+					anim.SetBool("IsPatrol", true);
 					Move(speedWalk);
 					m_WaitTime = startWaitTime;
 				}
 				else
 				{
 					Stop();
+					anim.SetBool("IsPatrol", false);
 					m_WaitTime -= Time.deltaTime;
 				}
 			}
 		}
-	}
-
-	private void OnAnimatorMove()
-	{
-
 	}
 
 	public void NextPoint()

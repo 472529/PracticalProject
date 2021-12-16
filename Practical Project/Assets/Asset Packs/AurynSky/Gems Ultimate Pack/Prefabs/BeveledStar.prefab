@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010525198182}
   - component: {fileID: 23000011854226900}
   - component: {fileID: 114000012340938906}
+  - component: {fileID: -3483222787869850109}
   m_Layer: 0
   m_Name: BeveledStar
   m_TagString: Untagged
@@ -106,3 +107,17 @@ MonoBehaviour:
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &-3483222787869850109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012510692222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf57cf3a55a68cf468328bc48ae92b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerManager: {fileID: 0}

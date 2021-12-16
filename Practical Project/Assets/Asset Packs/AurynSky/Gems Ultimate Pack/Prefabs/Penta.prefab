@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000013289579214}
   - component: {fileID: 23000013546331654}
   - component: {fileID: 114000013818408240}
+  - component: {fileID: -3633332460452360904}
   m_Layer: 0
   m_Name: Penta
   m_TagString: Untagged
@@ -106,3 +107,17 @@ MonoBehaviour:
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &-3633332460452360904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010646675420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf57cf3a55a68cf468328bc48ae92b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerManager: {fileID: 0}

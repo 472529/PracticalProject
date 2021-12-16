@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010953352954}
   - component: {fileID: 23000011085638434}
   - component: {fileID: 114000010769974528}
+  - component: {fileID: 8133975208610034843}
   m_Layer: 0
   m_Name: Diamondo5side
   m_TagString: Untagged
@@ -106,3 +107,17 @@ MonoBehaviour:
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &8133975208610034843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013656696560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf57cf3a55a68cf468328bc48ae92b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerManager: {fileID: 0}
