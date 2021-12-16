@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
+	public float enemyHealth = 100;
 	public NavMeshAgent navMeshAgent;               //  Nav mesh agent component
 	public float startWaitTime = 4;                 //  Wait time of every action
 	public float timeToRotate = 2;                  //  Wait time when the enemy detect near the player without seeing
@@ -69,6 +70,11 @@ public class AIController : MonoBehaviour
 		{
 			Patroling();
 		}
+
+		if(enemyHealth < 0)
+		{
+			Destroy(this);
+		}
 	}
 
 	private void Chasing()
@@ -113,7 +119,8 @@ public class AIController : MonoBehaviour
 			//  Check if the enemy detect near the player, so the enemy will move to that position
 			if (m_TimeToRotate <= 0)
 			{
-				anim.SetBool("IsPatrol", true);
+				anim.SetBool("IsPatrol", false);
+				anim.SetBool("IsChasing", true);
 				Move(speedWalk);
 				LookingPlayer(playerLastPosition);
 			}
