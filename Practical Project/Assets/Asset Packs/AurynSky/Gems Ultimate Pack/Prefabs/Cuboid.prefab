@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000012914220848}
   - component: {fileID: 114000012140138052}
   - component: {fileID: -3720048398784605398}
+  - component: {fileID: 2020688191971618726}
   m_Layer: 0
   m_Name: Cuboid
   m_TagString: Untagged
@@ -121,3 +122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerManager: {fileID: 0}
+--- !u!64 &2020688191971618726
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013105924406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d5201c54bfe2c0242acafec0421e0d8e, type: 3}

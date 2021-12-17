@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000012859278624}
   - component: {fileID: 114000013075131974}
   - component: {fileID: -5355116393317562014}
+  - component: {fileID: 8835508409213022062}
   m_Layer: 0
   m_Name: Diamondo
   m_TagString: Untagged
@@ -121,3 +122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerManager: {fileID: 0}
+--- !u!64 &8835508409213022062
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013931470818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 911b2aca4190de843ba6fc029bf3734d, type: 3}

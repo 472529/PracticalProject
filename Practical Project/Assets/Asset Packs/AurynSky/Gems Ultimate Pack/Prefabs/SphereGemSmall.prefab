@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000013243000176}
   - component: {fileID: 114000013812041550}
   - component: {fileID: 7265726965696335343}
+  - component: {fileID: -2841299441255794105}
   m_Layer: 0
   m_Name: SphereGemSmall
   m_TagString: Untagged
@@ -121,3 +122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerManager: {fileID: 0}
+--- !u!64 &-2841299441255794105
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010921973622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 486351f15650ce5408452352641fc317, type: 3}

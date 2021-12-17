@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000013546331654}
   - component: {fileID: 114000013818408240}
   - component: {fileID: -3633332460452360904}
+  - component: {fileID: 4463769189235279290}
   m_Layer: 0
   m_Name: Penta
   m_TagString: Untagged
@@ -121,3 +122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerManager: {fileID: 0}
+--- !u!64 &4463769189235279290
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010646675420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 34a866017115e1f4693b2328671afe14, type: 3}

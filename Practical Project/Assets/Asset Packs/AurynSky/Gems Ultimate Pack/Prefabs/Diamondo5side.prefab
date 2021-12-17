@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000011085638434}
   - component: {fileID: 114000010769974528}
   - component: {fileID: 8133975208610034843}
+  - component: {fileID: 5040889674363135214}
   m_Layer: 0
   m_Name: Diamondo5side
   m_TagString: Untagged
@@ -121,3 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerManager: {fileID: 0}
+  gemSound: {fileID: 0}
+  audioSource: {fileID: 0}
+--- !u!64 &5040889674363135214
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013656696560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6217dd83a11a7df46b82193c138a8ce2, type: 3}

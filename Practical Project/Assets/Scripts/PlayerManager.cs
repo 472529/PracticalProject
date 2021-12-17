@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 	public float collectable;
-	public float playerHealth = 100;
+	public float playerMaxHealth = 100;
+	public float playerCurrentHealth;
 	public Material potionLiquid;
+	public HealthBarScript healthBar;
 
 	private void Start()
 	{
+		playerCurrentHealth = playerMaxHealth;
+		healthBar.SetMaxHealth(playerMaxHealth);
 		potionLiquid.SetInt("Fill Amount", 1);
 	}
 }

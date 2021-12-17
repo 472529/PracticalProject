@@ -34,8 +34,10 @@ public class AIController : MonoBehaviour
 	bool m_CaughtPlayer;                            //  if the enemy has caught the player
 
 	GameObject player;
+	public GameObject sword;
 	PlayerManager playerManager;
 	public Animator anim;
+	public HealthBarScript healthBar;
 
 	void Start()
 	{
@@ -54,6 +56,7 @@ public class AIController : MonoBehaviour
 		navMeshAgent.speed = speedWalk;             //  Set the navemesh speed with the normal speed of the enemy
 		navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
 		player = GameObject.FindGameObjectWithTag("Player");
+		sword = GameObject.FindGameObjectWithTag("Sword");
 		playerManager = player.GetComponent<PlayerManager>();
 		anim = GetComponent<Animator>();
 	}
@@ -246,7 +249,9 @@ public class AIController : MonoBehaviour
 	{
 		if (player)
 		{
-
+			playerManager.playerCurrentHealth -= 50;
+			healthBar.SetHealth(playerManager.playerCurrentHealth);
+			Debug.Log("HIT");
 		}
 	}
 }

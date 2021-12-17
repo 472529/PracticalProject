@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
 	[SerializeField] private float walkSpeed;
 	[SerializeField] private float runSpeed;
 
-	private Vector3 moveDirection;
+	[SerializeField] private Vector3 moveDirection;
 	private Vector3 velocity;
 
 	[SerializeField] private bool isGrounded;
@@ -39,7 +39,11 @@ public class CharacterMovement : MonoBehaviour
 	private void LateUpdate()
 	{
 		Move();
-		
+
+		if (Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			StartCoroutine(Attack());
+		}
 	}
 
 	private void Move()
@@ -107,7 +111,7 @@ public class CharacterMovement : MonoBehaviour
 			StartCoroutine(Jump());
 		}
 
-		//controller.Move(moveDirection * Time.deltaTime);
+		
 
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
@@ -115,25 +119,35 @@ public class CharacterMovement : MonoBehaviour
 
 	private void Idle()
 	{
-		animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
+		animator.SetFloat("Speed", 0f, 0.05f, Time.deltaTime);
 	}
 
 	private void Walk()
 	{
-		animator.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+		animator.SetFloat("Speed", 0.5f, 0.05f, Time.deltaTime);
 		moveSpeed = walkSpeed;
 	}
 
 	private void Run()
 	{
-		animator.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
+		animator.SetFloat("Speed", 1f, 0.05f, Time.deltaTime);
 		moveSpeed = runSpeed;
+	}
+
+	private IEnumerator Attack()
+	{
+		animator.SetLayerWeight(animator.GetLayerIndex("Attack Layer"), 1);
+		animator.SetTrigger("Attack");
+
+		yield return new WaitForSeconds(0.9f);
+		animator.SetLayerWeight(animator.GetLayerIndex("Attack Layer"), 0);
+
 	}
 
 	private IEnumerator Jump()
 	{
 		animator.SetLayerWeight(animator.GetLayerIndex("Jump Layer"), 1);
-		animator.SetBool("Jump", true);
+		animator.SetTrigger("Jump");
 		jumps = jumps + 1;
 		velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
 		yield return new WaitForSeconds(1.5f);
